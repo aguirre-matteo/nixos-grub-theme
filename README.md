@@ -29,6 +29,9 @@ Set the following configurations somewhere in your NixOS config.
 Make sure the `inputs` variable is available in the context.
 
 ```configuration.nix
-boot.loader.grub.theme = ${inputs.nixos-grub-theme.theme};
-boot.loader.grub.splashImage = ${inputs.nixos-grub-theme.theme}/background.png;
+{ inputs, pkgs, ... }:
+
+{
+  boot.loader.grub.theme = "${pkgs.callPackage inputs.nixos-grub-theme.theme {}}";
+  boot.loader.grub.splashImage = "${pkgs.callPackage inputs.nixos-grub-theme.theme {}}/background.png";
 ```
