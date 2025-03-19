@@ -34,4 +34,5 @@ Make sure the `inputs` variable is available in the context.
 {
   boot.loader.grub.theme = "${pkgs.callPackage inputs.nixos-grub-theme.theme {}}";
   boot.loader.grub.splashImage = "${pkgs.callPackage inputs.nixos-grub-theme.theme {}}/background.png";
+}
 ```
